@@ -89,7 +89,7 @@ def extract_dataset(zip_path: Path) -> Path:
     with zipfile.ZipFile(zip_path, "r") as z:
         z.extractall(RAW_DIR)
 
-    print(f"  ✔  Extracción completada: {extract_dir}")
+    print(f"Extracción completada: {extract_dir}")
     return extract_dir
 
 
@@ -212,7 +212,7 @@ def process_split(raw_split_dir: Path, split_name: str):
 
         converted += 1
 
-    print(f"  ✔  [{split_name}] {converted} imágenes procesadas, {skipped} omitidas.")
+    print(f" [{split_name}] {converted} imágenes procesadas, {skipped} omitidas.")
     return converted
 
 
@@ -245,9 +245,9 @@ def verify_dataset():
                 issues += 1
 
     if issues == 0:
-        print("  ✔  Sin problemas de integridad detectados.")
+        print(" Sin problemas de integridad detectados.")
     else:
-        print(f"  ⚠  Se encontraron {issues} problema(s) de integridad.")
+        print(f"Se encontraron {issues} problema(s) de integridad.")
 
 
 # ─────────────────────────────────────────────
